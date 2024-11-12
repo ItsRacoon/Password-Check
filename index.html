@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Crack</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navcontainer">
+            <p class="logo">Password Checker</p>
+            <ul class="nav-links">
+                <li><a href="#" data-section="about">About</a></li>
+                <li><a href="#" data-section="services">Services</a></li>
+                <li><a href="#" data-section="contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Main Text Section -->
+    <div class="text1">
+        <h1>IS YOUR PASSWORD SECURE?</h1>
+    </div>
+    
+    <!-- Password Checker Container -->
+    <div class="container">
+        <h1>Check Your Password</h1>
+        <form id="passwordForm">
+            <label for="password">Enter Password:</label>
+            <input type="password" id="password" placeholder="Enter your password" required>
+        </form>
+        <div class="strength">
+            <p>No Password</p>
+        </div>
+        <div class="results">
+            <h2>Estimated Time to Crack:</h2>
+            <p class="estimatedTime"><span id="time">0 Seconds</span></p>
+        </div>
+    </div>
+    
+
+    <!-- jQuery and Script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
