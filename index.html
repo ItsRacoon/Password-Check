@@ -1,48 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Password Crack</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <!-- Navbar -->
     <nav class="navbar">
-        <div class="navcontainer">
-            <p class="logo">Password Checker</p>
-            <ul class="nav-links">
-                <li><a href="#" data-section="about">About</a></li>
-                <li><a href="#" data-section="services">Services</a></li>
-                <li><a href="#" data-section="contact">Contact</a></li>
-            </ul>
-        </div>
+      <div class="navcontainer">
+        <p class="logo">Password Checker</p>
+        <ul class="nav-links">
+          <li><a href="#" data-section="about">About</a></li>
+          <li><a href="#" data-section="service">Services</a></li>
+          <li><a href="#" data-section="tips">Tips</a></li>
+        </ul>
+      </div>
     </nav>
-    
+
     <!-- Main Text Section -->
     <div class="text1">
-        <h1>IS YOUR PASSWORD SECURE?</h1>
+      <h1>IS YOUR PASSWORD SECURE?</h1>
     </div>
+    <div class="textSection" id="aboutSection" style="display: none;">
+      <h2>About</h2>
+      <div class="about-text">
+        <p>Welcome to <strong>Password Checker</strong> — the quick way to test your password strength and improve your online security.</p>
+            <p>We never store your passwords. Even if we did, we wouldn’t know who you are!</p>
+        </div>
+    </div>
+    <div class="textSection" id="serviceSection" style="display: none;">
+      <p>Services</p>
+    </div>
+    <div class="textSection" id="tipsSection" style="display: none;">
+      <h2>Tips</h2>
+      <div class="about-text">
+      <ul>
+        <li>Use a mix of uppercase, lowercase, numbers, and special characters.</li>
+        <li>Avoid using easily guessable information like names or dates.</li>
+        <li>Consider using a passphrase, a combination of random words.</li>
+        <li>Enable two-factor authentication (2FA) wherever possible.</li>
+        <li>Change your passwords regularly, especially for important accounts.</li>
+    </ul>
+
+    <p>These tips can significantly enhance the security of your passwords.</p>
+    </div>
+  </div>
     
+
     <!-- Password Checker Container -->
     <div class="container">
-        <h1>Check Your Password</h1>
-        <form id="passwordForm">
-            <label for="password">Enter Password:</label>
-            <input type="password" id="password" placeholder="Enter your password" required>
-        </form>
-        <div class="strength">
-            <p>No Password</p>
-        </div>
-        <div class="results">
-            <h2>Estimated Time to Crack:</h2>
-            <p class="estimatedTime"><span id="time">0 Seconds</span></p>
-        </div>
+      <h1>Check Your Password</h1>
+      <form id="passwordForm">
+        <label class="passwordForm" for="password">Enter Password:</label>
+        <input
+          type="password"
+          id="password"
+          placeholder="Enter your password"
+          required
+        />
+      </form>
+      <ul class="passwordCase">
+        <li id="upperCase">Upper Case</li>
+        <li id="lowerCase">Lower Case</li>
+        <li id="numbers">Numbers</li>
+        <li id="char">Special Characters</li>
+      </ul>
+      <div class="strength">
+        <p>No Password</p>
+      </div>
+      <div class="passwordSize">
+        <p><span id="charSize">0</span> Characters</p>
+      </div>
+      <div class="results">
+        <h2>Estimated Time to Crack:</h2>
+        <p class="estimatedTime"><span id="time">0 Seconds</span></p>
+      </div>
     </div>
-    
 
     <!-- jQuery and Script -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
