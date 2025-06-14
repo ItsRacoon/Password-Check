@@ -23,59 +23,158 @@
     <div class="text1">
       <h1>IS YOUR PASSWORD SECURE?</h1>
     </div>
-    <div class="textSection" id="aboutSection" style="display: none;">
+    <div class="textSection" id="aboutSection" style="display: none">
       <h2>About</h2>
       <div class="about-text">
-        <p>Welcome to <strong>Password Checker</strong> — the quick way to test your password strength and improve your online security.</p>
-            <p>We never store your passwords. Even if we did, we wouldn’t know who you are!</p>
-        </div>
+        <p>
+          Welcome to <strong>Password Checker</strong> — the quick way to test
+          your password strength and improve your online security.
+        </p>
+        <p>
+          We never store your passwords. Even if we did, we wouldn’t know who
+          you are!
+        </p>
+      </div>
     </div>
-    <div class="textSection" id="serviceSection" style="display: none;">
+    <div class="textSection" id="serviceSection" style="display: none">
       <p>Services</p>
     </div>
-    <div class="textSection" id="tipsSection" style="display: none;">
+    <div class="textSection" id="tipsSection" style="display: none">
       <h2>Tips</h2>
       <div class="about-text">
-      <ul>
-        <li>Use a mix of uppercase, lowercase, numbers, and special characters.</li>
-        <li>Avoid using easily guessable information like names or dates.</li>
-        <li>Consider using a passphrase, a combination of random words.</li>
-        <li>Enable two-factor authentication (2FA) wherever possible.</li>
-        <li>Change your passwords regularly, especially for important accounts.</li>
-    </ul>
+        <ul>
+          <li>
+            Use a mix of uppercase, lowercase, numbers, and special characters.
+          </li>
+          <li>Avoid using easily guessable information like names or dates.</li>
+          <li>Consider using a passphrase, a combination of random words.</li>
+          <li>Enable two-factor authentication (2FA) wherever possible.</li>
+          <li>
+            Change your passwords regularly, especially for important accounts.
+          </li>
+        </ul>
 
-    <p>These tips can significantly enhance the security of your passwords.</p>
+        <p>
+          These tips can significantly enhance the security of your passwords.
+        </p>
+      </div>
     </div>
-  </div>
-    
 
     <!-- Password Checker Container -->
     <div class="container">
-      <h1>Check Your Password</h1>
+      <h1>Advanced Password Security Analyzer</h1>
+      
+      <!-- Attack Scenario Selector -->
+      <div class="scenario-selector">
+        <label for="attackScenario">Attack Scenario:</label>
+        <select id="attackScenario">
+          <option value="online">Online Attack (Slow)</option>
+          <option value="offline" selected>Offline Attack (Fast Hash)</option>
+          <option value="massive">Massive Cracking Operation</option>
+        </select>
+      </div>
+      
       <form id="passwordForm">
         <label class="passwordForm" for="password">Enter Password:</label>
-        <input
-          type="password"
-          id="password"
-          placeholder="Enter your password"
-          required
-        />
+        <div class="password-input-group">
+          <input type="password" id="password" placeholder="Enter your password" required/>
+          <button type="button" id="togglePassword">👁️ Show</button>
+        </div>
       </form>
-      <ul class="passwordCase">
-        <li id="upperCase">Upper Case</li>
-        <li id="lowerCase">Lower Case</li>
-        <li id="numbers">Numbers</li>
-        <li id="char">Special Characters</li>
-      </ul>
+      
+      <!-- Password Requirements Checklist -->
+      <div class="requirements-section">
+        <h3>Security Requirements</h3>
+        <ul class="passwordCase">
+          <li id="minLength"><span class="check-icon">✗</span> At least 12 characters</li>
+          <li id="upperCase"><span class="check-icon">✗</span> Uppercase letters</li>
+          <li id="lowerCase"><span class="check-icon">✗</span> Lowercase letters</li>
+          <li id="numbers"><span class="check-icon">✗</span> Numbers</li>
+          <li id="char"><span class="check-icon">✗</span> Special characters</li>
+        </ul>
+      </div>
+      
+      <!-- Strength Indicator -->
       <div class="strength">
         <p>No Password</p>
       </div>
-      <div class="passwordSize">
-        <p><span id="charSize">0</span> Characters</p>
+      
+      <!-- Password Statistics -->
+      <div class="stats-grid">
+        <div class="stat-item">
+          <h4>Length</h4>
+          <p><span id="charSize">0</span> characters</p>
+        </div>
+        <div class="stat-item">
+          <h4>Entropy</h4>
+          <p><span id="entropy">0 bits</span></p>
+        </div>
+        <div class="stat-item">
+          <h4>Character Space</h4>
+          <p><span id="charSpace">0</span> possible chars</p>
+        </div>
       </div>
+      
+      <!-- Attack Scenario Info -->
+      <div class="scenario-info">
+        <h3>Current Attack Scenario</h3>
+        <p><strong><span id="scenarioName">Offline Attack</span></strong></p>
+        <p><span id="scenarioDesc">Fast hash functions like MD5 or SHA1</span></p>
+      </div>
+      
+      <!-- Crack Time Results -->
       <div class="results">
-        <h2>Estimated Time to Crack:</h2>
-        <p class="estimatedTime"><span id="time">0 Seconds</span></p>
+        <h2>Estimated Time to Crack</h2>
+        <div class="time-estimates">
+          <div class="time-item">
+            <h4>Average Case (50% chance)</h4>
+            <p class="estimatedTime"><span id="time">0 Seconds</span></p>
+          </div>
+          <div class="time-item">
+            <h4>Worst Case (100% certainty)</h4>
+            <p class="estimatedTime"><span id="worstCaseTime">0 Seconds</span></p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Security Warnings -->
+      <div class="warnings-section">
+        <h3>Security Analysis</h3>
+        <ul id="warnings">
+          <!-- Dynamic warnings will be inserted here -->
+        </ul>
+      </div>
+      
+      <!-- Recommendations -->
+      <div class="recommendations-section">
+        <h3>Recommendations</h3>
+        <ul id="recommendations">
+          <!-- Dynamic recommendations will be inserted here -->
+        </ul>
+      </div>
+      
+      <!-- Password Generator -->
+      <div class="generator-section">
+        <h3>Generate Secure Password</h3>
+        <div class="generator-options">
+          <label>
+            <input type="checkbox" id="genUppercase" checked> Uppercase
+          </label>
+          <label>
+            <input type="checkbox" id="genLowercase" checked> Lowercase
+          </label>
+          <label>
+            <input type="checkbox" id="genNumbers" checked> Numbers
+          </label>
+          <label>
+            <input type="checkbox" id="genSpecial" checked> Special Characters
+          </label>
+          <label>
+            Length: <input type="number" id="genLength" value="16" min="8" max="128">
+          </label>
+        </div>
+        <button type="button" id="generatePassword">Generate Password</button>
+        <input type="text" id="generatedPassword" readonly placeholder="Generated password will appear here">
       </div>
     </div>
 
